@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import CCAutocomplete
 
-class QuizViewController: UIViewController,  UITextFieldDelegate{
+class QuizViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var guessTextField: RVS_AutofillTextField!
     @IBOutlet weak var quoteLabel: UILabel!
@@ -18,15 +17,13 @@ class QuizViewController: UIViewController,  UITextFieldDelegate{
     
     var movies = [Movie]()
     var quotes = [QuizQuote]()
-    var testingTextDictionary: [String] = [
-        "Friends",
-        "You",
-        "House of GUCCI",
-        "Greys of Anatomy",
-        "Age of Youth",
-        "Curella",
-        "Spy",
-        "Bad Moms"]
+    var autoFillDictionary: [String] = [
+        "Elf",
+        "Hamilton",
+        "Joker",
+        "Leon The Professional",
+        "Lion",
+        "Mulan"]
     var currentQuote = -1
     var score = 0
     var quizOver = false
@@ -38,6 +35,8 @@ class QuizViewController: UIViewController,  UITextFieldDelegate{
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight(gesture: )))
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
+        guessTextField.delegate = self
+        guessTextField.dataSource = self
         
         
         startQuiz()
@@ -48,7 +47,6 @@ class QuizViewController: UIViewController,  UITextFieldDelegate{
     }
     
     func startQuiz(){
-//        setAutoCompleteDictionary()
         setQuotes()
         showQuote()
         
@@ -140,7 +138,7 @@ extension QuizViewController: RVS_AutofillTextFieldDataSource {
     var textDictionary: [RVS_AutofillTextFieldDataSourceType] {
         var index = 0
         
-        let ret: [RVS_AutofillTextFieldDataSourceType] = testingTextDictionary.compactMap {
+        let ret: [RVS_AutofillTextFieldDataSourceType] = autoFillDictionary.compactMap {
             let currentStr = $0.trimmingCharacters(in: .whitespacesAndNewlines)
             if !currentStr.isEmpty {
                 defer { index += 1 }
@@ -165,6 +163,5 @@ extension QuizViewController: RVS_AutofillTextFieldDelegate {
      - parameter selectionWasMade: The data item, with the string and the refCon.
      */
     func autoFillTextField(_ inAutofillTextField: RVS_AutofillTextField, selectionWasMade inSelectedItem: RVS_AutofillTextFieldDataSourceType) {
-        print("The user selected this: \(inSelectedItem.debugDescription)")
     }
 }

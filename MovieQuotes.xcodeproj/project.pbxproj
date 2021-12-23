@@ -121,8 +121,34 @@
 				418420B5C431F2715F33E680 /* Pods-MovieQuotesTests.debug.xcconfig */,
 				7CBA58CA7DC7C62F4ADC4916 /* Pods-MovieQuotesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC0952C027748F9700EAF1B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC24AC70276F6CF10024AC72 /* ViewController.swift */,
+				FCEFF63D27736542008B5126 /* QuizViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FC0952C127748FAE00EAF1B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEFF64127737A93008B5126 /* RVS_AutofillTextField.swift */,
+				FC24AC9C276F6F070024AC72 /* MovieCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC0952C227748FBF00EAF1B6 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				FC24AC9E276F6F850024AC72 /* Movie.swift */,
+				FCEFF63F2773678C008B5126 /* QuizQuote.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		FC24AC60276F6CF10024AC72 = {
@@ -150,18 +176,15 @@
 		FC24AC6B276F6CF10024AC72 /* MovieQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				FC0952C227748FBF00EAF1B6 /* Modal */,
+				FC0952C127748FAE00EAF1B6 /* View */,
+				FC0952C027748F9700EAF1B6 /* Controller */,
 				FC24AC6C276F6CF10024AC72 /* AppDelegate.swift */,
 				FC24AC6E276F6CF10024AC72 /* SceneDelegate.swift */,
-				FC24AC70276F6CF10024AC72 /* ViewController.swift */,
 				FC24AC72276F6CF10024AC72 /* Main.storyboard */,
 				FC24AC75276F6CF30024AC72 /* Assets.xcassets */,
 				FC24AC77276F6CF30024AC72 /* LaunchScreen.storyboard */,
 				FC24AC7A276F6CF30024AC72 /* Info.plist */,
-				FC24AC9C276F6F070024AC72 /* MovieCollectionViewCell.swift */,
-				FC24AC9E276F6F850024AC72 /* Movie.swift */,
-				FCEFF63D27736542008B5126 /* QuizViewController.swift */,
-				FCEFF63F2773678C008B5126 /* QuizQuote.swift */,
-				FCEFF64127737A93008B5126 /* RVS_AutofillTextField.swift */,
 			);
 			path = MovieQuotes;
 			sourceTree = "<group>";
